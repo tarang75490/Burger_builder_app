@@ -1,0 +1,11 @@
+.Logo{
+    background-color: ivory;
+    height: 100%; 
+    margin:0 auto;
+    box-sizing: border-box;
+    border-radius: 10%;
+}
+
+.Logo img{
+    height: 100%;
+}

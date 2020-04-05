@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useEffect, useState } from 'react';
+import Layout from './components/Layout/Layout'
+import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder'
+import CheckOut from './containers/Checkout/CheckOut';
+import {Route,Switch} from 'react-router-dom'
+import Orders from "./containers/Orders/Orders"
 function App() {
+//   const [state,setstate]=useState({
+//     show:true
+//   })
+//   useEffect(()=>{
+// setTimeout(()=>{
+//   setstate({
+//     show:false
+//   })
+// },5000)
+// },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Layout>
+        <Switch>
+          <Route path="/" exact component={BurgerBuilder} />
+          <Route path="/checkout"  component={CheckOut} />
+          <Route path="/orders"  component={Orders} />
+        </Switch>
+      </Layout>
     </div>
   );
 }
